@@ -1,0 +1,170 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import { workflowOffering } from '../../../../public/projects'
+import Image from 'next/image';
+
+export const appData = {
+  industry: 'Financial Software',
+  title: 'Workflow Offering',
+  description: 'Workflows Offering is our user interface that allows small business owners to setup workflows that would help them automate their everyday business use-cases like sending reminder emails for unpaid invoices, or setup up automatic recurring bill payments etc.',
+  image: workflowOffering,
+  date: '2021 - 2022',
+  service: 'Web Application',
+  url: 'https://qbo.intuit.com/redir/testdrive_us_advanced',
+  pathname: '/apps/workflow-offering',
+  framework: 'react',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'ReactJS',
+    image: '/logos/react-logo.png',
+  },
+  {
+    name: 'JavaScript',
+    image: '/logos/js-logo.png',
+  },
+  {
+    name: 'React-Redux',
+    image: '/logos/redux-logo.png',
+  },
+  {
+    name: 'HTML5',
+    image: '/logos/html5-logo.png',
+  },
+  {
+    name: 'CSS3',
+    image: '/logos/css-logo.png',
+  },
+  {
+    name: 'TailwindCSS',
+    image: '/logos/tailwindcss-logo.jpg',
+  },
+  { 
+    name: 'Cypress', 
+    image: '/logos/cypress-logo.jpeg' 
+  },
+  { 
+    name: 'Playwright', 
+    image: '/logos/playwright-logo.png' 
+  },
+  { 
+    name: 'Jest', 
+    image: '/logos/jest-logo-1.png' 
+  },
+  {
+    name: 'Git',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+];
+
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+
+    ## Overview
+
+    Workflow Offering is the user interface that allows customers to create workflows to automate their everyday business needs.
+    Workflow Offering lets users create different types of workflows specific to each transaction like unpaid invoice reminder workflows, bill payment remittance workflows, approval workflows and much more.
+    My notable contributions to Workflow Offering include the following -
+
+    1. UI changes to support Bill payment remittance and Purchase Order approval workflows
+    2. Filters on workflow templates page to filter out workflows based on the transaction type and action being performed.
+    3. Payment Insights recommendation on customer details page by leveraging Intuit's analytical ML model.
+    4. Authored multiple features to improve the core automation capabilities to ensure a seamless user experience. 
+    5. Built a generic recurrence widget that allowed users to setup recurring workflows on daily/monthly/yearly basis.
+    6. Introduced test suites for optimal automation and functional test coverage.
+    7. Template recommendation engine that recommends workflows based on a customer's previous app usage patterns.
+    8. Built reusable widgets/components for efficient usage across various micro-frontend applications from different business units.
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+
+## Implementation
+
+<AppSolution href={appData.url}>
+
+<ul role="list" className="mt-6 space-y-8">
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Payment Insights Integration -</strong> 
+      Intuit Quickbooks is a book-keeping software solution for small business owners. Small business owners can keep a record of all their customer and each customer's respective transactions like Invoices and Purchase Orders.
+      Intuit stores customer's behaviour data and uses it train an analytical model that predicts whether a particular customer is an early or late payer.
+      Based on these predictions we recommend the user to create a payment reminder workflow for that particular user.
+
+      I single-handedly incorporated necessary changes to implement Payment Insights integration on the customer details page workflows. 
+      My contributions are outlined as follows -
+
+      1. Partnered with Intuit's AI/ML team and leveraged their MSX model APIs to retrieve predictions for a particular customer.
+      2. Based on the the ML model's response, the UI would render a recommendation to create an unpaid invoice reminder workflow for that particular user.
+      3. Include tags in the workflow creation payload to help with efficient lookup during workflow read operation.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Support for Send Statement Workflows -</strong> 
+      Workflows Offering did not have support for Statement workflows initially. Our users needed an efficient solution to send out recurring statemets to their customers, based on daily, monthly or yearly recurrence schedule.
+      My contributions are include the following -
+
+      1. Include Statements as new transction type supported by WAS (backend microservice) and Workflow Offering.
+      2. Design a generic and extensible recurrence widget is easily embeddable and allows users to setup daily, monthly or yearly recurrence schedules.
+      3. GraphQL query changes to expose recurrence attributes in the API request and response payloads.
+      4. Test suites to cover all core functionality as well as extensive automation test cases as well.
+    </span>
+  </li>
+</ul>
+
+</AppSolution>
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
