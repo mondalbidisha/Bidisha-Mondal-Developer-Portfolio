@@ -2,7 +2,7 @@
 import { ExpandArrowLink, GlowCard } from '@/components';
 import clsx from 'clsx';
 import Image, { StaticImageData } from 'next/image';
-import { impulseux, leenithBorges, leenithIos, intuitQuickbooks, sierraEcomaderas, proviewClient } from '../../public/projects/';
+import { impulseux, leenithBorges, leenithIos, intuitQuickbooks, messageMingle, proviewClient, talentTap } from '../../public/projects/';
 
 interface Project {
   href: string;
@@ -31,17 +31,24 @@ const projects: Project[] = [
   },
   {
     href: '/apps/proview',
-    name: 'Proview Client',
+    name: 'Proview',
     full: true,
     description: ' is a frontend application that provides remote proctoring solutions for candidates taking our assessments remotely.',
     image: { src: proviewClient },
   },
   {
-    href: '/apps/sierra-ecomaderas',
-    name: 'Sierra Ecomanderas',
+    href: '/apps/message-and-mingle',
+    name: 'Message And Mingle',
     full: false,
-    description: ' static website for a wood selling bussiness.',
-    image: { src: sierraEcomaderas },
+    description: ' is a real-time chat application.',
+    image: { src: messageMingle },
+  },
+  {
+    href: '/apps/talent-tap',
+    name: 'TalentTap',
+    full: false,
+    description: ' is an AI-powered interview platform.',
+    image: { src: talentTap },
   },
   {
     href: '/apps/leenith-borges',
@@ -74,7 +81,7 @@ export default function MyWork() {
         {projects.map((project) => (
           <GlowCard
             key={project.name}
-            className={clsx('hover:shadow-my_work_yellow/90', project.full ? 'h-[60vh] @2xl:h-[50vh] @3xl:col-span-2' : 'h-[60vh] @3xl:col-span-1')}
+            className={clsx('hover:shadow-my_work_yellow/90', project.full ? 'h-[60vh] @2xl:h-[50vh] @3xl:col-span-2' : 'h-[65vh] @3xl:col-span-1')}
             glowClassName="from-[#ffdc8b] to-[#ffdc8b]"
           >
             <div className={clsx('flex-col justify-between h-full', project.full && '@2xl:flex')}>

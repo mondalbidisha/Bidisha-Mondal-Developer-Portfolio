@@ -1,0 +1,142 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { talentTapIntro } from '../../../../public/projects'
+
+export const appData = {
+  industry: 'Computer Software',
+  title: 'TalentTap',
+  description: "Interviews can be tough, whether you're an applicant or an interviewer. Powered by AI, TalentTap provides all the necessary tools to make your next interview a positive experience.",
+  image: talentTapIntro,
+  date: '2024',
+  service: 'Web Application',
+  url: 'https://github.com/mondalbidisha/Message-And-Mingle',
+  pathname: '/apps/talent-tap',
+  framework: 'next',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'HTML5',
+    image: '/logos/html5-logo.png',
+  },
+  {
+    name: 'CSS3',
+    image: '/logos/css-logo.png',
+  },
+  {
+    name: 'JavaScript',
+    image: '/logos/js-logo.png',
+  },
+  {
+    name: 'TypeScript',
+    image: '/logos/ts-logo.png',
+  },
+  {
+    name: 'TailwindCSS',
+    image: '/logos/tailwindcss-logo.jpg',
+  },
+  {
+    name: 'MongoDB',
+    image: '/logos/mongodb-logo.webp',
+  },
+  {
+    name: 'Git',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+
+    ## Overview
+
+    Message And Mingle is a contemporary chat application developed with cutting-edge technologies such as Next.js, TypeScript, Tailwind CSS, MongoDB, and Prisma. It offers real-time chat, group creation, profile customization, image uploads, and multiple login authentication methods, including email and social media SSO login via GitHub and Google.
+    
+    Message And Mingle is a personal project and the source code for the same can be found on GitHub. Live demo vidoes included in the README.
+    
+    Features included as part of the MVP release are as follows -
+
+   1. Instant Messaging - Engage in real-time conversations with other users.
+   2. Group Chat Creation - Form chat groups to include multiple participants.
+   3. Personalized Profiles - Customize your name and profile picture.
+   4. User Activity Status - View live online/offline status of users.
+   5. Photo Sharing - Upload and share images in chats via Cloudinary.
+   6. Diverse Authentication - Options: Register or log in using email, GitHub, Google, and Twitter.
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+
+## Implementation
+
+  Message And Mingle is a server-side rendered full stack web application that utilises the following technology stack to support a plethora of exciting features -
+
+  1. Next.js: A popular React framework for building web applications.
+  2. TypeScript: A statically typed superset of JavaScript.
+  3. Tailwind CSS: A utility-first CSS framework for designing modern and responsive UIs.
+  4. Headless UI: A set of completely unstyled, fully accessible UI components for React.
+  5. React: A JavaScript library for building user interfaces.
+  6. Prisma: A modern database toolkit for TypeScript and Node.js.
+  7. MongoDB: A NoSQL database for storing chat data.
+  8. NextAuth: An authentication library for Next.js applications.
+  9. Zustand: A small, fast, and scalable state management library for React.
+  10. Pusher: A hosted service that makes it super-easy to add real-time data and functionality to web and mobile applications.
+  11. Cloudinary: A cloud service that offers a solution to a web application's entire image management pipeline.
+  
+<AppSolution href={appData.url}>
+  
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
