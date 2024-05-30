@@ -18,7 +18,7 @@ function PageLink({ page }: { page: Page }) {
         <Border position="left" className="flex flex-col items-start pl-8">
           <h3 className="text-base font-semibold text-blue-100">{page.title}</h3>
           <time dateTime={page.date} className="order-first text-sm text-white">
-            {formatDate(page.date)}
+            {page.date}
           </time>
           <ExpandArrowLink href={page.href} className="before:bg-blue-100" />
         </Border>

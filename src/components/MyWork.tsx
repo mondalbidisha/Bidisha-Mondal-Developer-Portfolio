@@ -2,7 +2,7 @@
 import { ExpandArrowLink, GlowCard } from '@/components';
 import clsx from 'clsx';
 import Image, { StaticImageData } from 'next/image';
-import { impulseux, leenithBorges, leenithIos, intuitQuickbooks, messageMingle, proviewClient, talentTap } from '../../public/projects/';
+import { landmarkRecognition, fakeNewsDetection, intuitQuickbooks, messageMingle, proviewClient, talentTap } from '../../public/projects/';
 
 interface Project {
   href: string;
@@ -51,25 +51,18 @@ const projects: Project[] = [
     image: { src: talentTap },
   },
   {
-    href: '/apps/leenith-borges',
-    name: 'Leenith',
-    full: true,
-    description: ' e-commerce website to manage, and sell courses online.',
-    image: { src: leenithBorges },
+    href: '/apps/landmark-recognition',
+    name: 'Landmark Recognition',
+    full: false,
+    description: ' using image datasets.',
+    image: { src: landmarkRecognition },
   },
   {
-    href: '/apps/leenith-borges',
-    name: 'Leenith IOS',
+    href: '/apps/fake-news-detection',
+    name: 'Fake News Detection',
     full: false,
-    description: ' ios app to access and buy courses.',
-    image: { src: leenithIos },
-  },
-  {
-    href: '/apps/impulseux',
-    name: 'ImpulseUX',
-    full: false,
-    description: ' static website for design and development agency.',
-    image: { src: impulseux },
+    description: ' using machine learning.',
+    image: { src: fakeNewsDetection },
   },
 ];
 
@@ -81,7 +74,7 @@ export default function MyWork() {
         {projects.map((project) => (
           <GlowCard
             key={project.name}
-            className={clsx('hover:shadow-my_work_yellow/90', project.full ? 'h-[60vh] @2xl:h-[50vh] @3xl:col-span-2' : 'h-[65vh] @3xl:col-span-1')}
+            className={clsx('hover:shadow-my_work_yellow/90', project.full ? 'h-[450px] @2xl:h-[50vh] @3xl:col-span-2' : 'h-[500px] @3xl:col-span-1')}
             glowClassName="from-[#ffdc8b] to-[#ffdc8b]"
           >
             <div className={clsx('flex-col justify-between h-full', project.full && '@2xl:flex')}>

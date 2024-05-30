@@ -83,7 +83,7 @@ const subSectionsIcons: { [key: string]: JSX.Element } = {
   hard: <div className="bg-red-500 rounded-full h-[16px] w-[16px] blur-[1px]" />,
 };
 
-export default function Portfolio({ allApps, allLeetcode }: { allApps: MDXEntry<AppType>[]; allLeetcode: MDXEntry<LeetcodeType>[] }) {
+export default function Portfolio({ allApps }: { allApps: MDXEntry<AppType>[]}) {
   const portafolio = useSelector(selectPortfolio);
   const sections = useSelector(selectSections);
   const pathname = usePathname();

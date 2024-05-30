@@ -8,7 +8,7 @@ import Portfolio from './Portfolio';
 import Scripts from './Scripts';
 import Timeline from './Timeline';
 
-export default function Explorer({ allApps, allLeetcode }: { allApps: MDXEntry<App>[], allLeetcode: MDXEntry<Leetcode>[] }) {
+export default function Explorer({ allApps }: { allApps: MDXEntry<App>[]}) {
   return (
     <>
       <Header menuTitle="EXPLORER">
@@ -18,7 +18,7 @@ export default function Explorer({ allApps, allLeetcode }: { allApps: MDXEntry<A
       </Header>
       <div id="subMenusContainer" className="divide-dark_border divide-y-2 flex flex-col mx-[1px] flex-1 select-none">
         <Editors />
-        <Portfolio allApps={allApps} allLeetcode={allLeetcode} />
+        <Portfolio allApps={allApps}/>
         <Outline />
         <Timeline />
         <Scripts />

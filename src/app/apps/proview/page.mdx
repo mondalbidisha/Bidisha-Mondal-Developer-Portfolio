@@ -44,7 +44,7 @@ export const technologies = [
     image: '/logos/backbone-logo.png',
   },
   {
-    name: 'Git',
+    name: 'Git Cli',
     image: '/logos/git-logo.png',
   },
   {
@@ -81,7 +81,7 @@ export const technologies = [
 
 <AppSolution href={appData.url}>
 <ul>
-<li>
+  <li>
     <span>
       <strong className="font-semibold text-blue-100">Proview Client -</strong> 
       Proview Client offers remote proctoring solutions to enable candidates attend our assessments and interviews remotely. 
@@ -110,7 +110,6 @@ export const technologies = [
     </span>
   </li>
 </ul>
-
 </AppSolution>
 
 </Section>
@@ -124,7 +123,7 @@ export const technologies = [
 <FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
   {technologies.map((tech) => (
     <FadeIn key={tech.name}>
-      <div className="mt-auto">
+      <div className="mt-auto text-center">
         <Image
           src={tech.image}
           className="object-contain rounded-md m-auto"

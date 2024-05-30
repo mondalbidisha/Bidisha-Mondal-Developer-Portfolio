@@ -1,0 +1,131 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { fakeNewsDetection } from '../../../../public/projects'
+
+export const appData = {
+  industry: 'Computer Software',
+  title: 'Fake News Detection',
+  description: 'A machine learning model that can accurately identify and categorize news articles from various news and social media platforms as either fake or legitimate.',
+  image: fakeNewsDetection,
+  date: '2024',
+  service: 'Predictive Analysis',
+  url: 'https://github.com/mondalbidisha/Fake-News-Analyser-Predictor',
+  pathname: '/apps/fake-news-detection',
+  framework: 'next',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'Numpy',
+    image: '/logos/numpy-logo.png',
+  },
+  {
+    name: 'Jupyter',
+    image: '/logos/jupyter-logo.png',
+  },
+  {
+    name: 'Pandas',
+    image: '/logos/pandas-logo.png',
+  },
+  {
+    name: 'Matplotlib',
+    image: '/logos/matplotlib-logo.png',
+  },
+  {
+    name: 'Scikit-Learn',
+    image: '/logos/scikit-learn-logo.png',
+  },
+  {
+    name: 'Git Cli',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+    ## Overview
+
+    In today's digital era, the rapid spread of information across various online platforms has made fake news a major problem. 
+    Our project utilizes machine learning algorithms to automatically assess the authenticity of news articles, offering a crucial resource for fighting misinformation.
+
+    Fake news analyser and predictor is an academic project focusing on creating a machine learning model that can accurately identify and categorize news articles from various news and social media platforms as either fake or legitimate. 
+    The spread of fake news can have significant negative impacts on individuals and society. 
+    To address this, we are developing and training a model using a wide-ranging dataset of news articles. 
+    
+    We have employed four different methods to evaluate the performance of the model.
+
+    1. Logistic Regression
+    2. Decision Tree Classifier
+    3. Random Forest Classifier
+    4. Naive Bayes Classifier
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+
+## Implementation
+
+We are utilizing a labeled dataset that includes news articles and their respective classifications (true or false). 
+
+This dataset is organized into two categories -
+
+True: Authentic news articles
+False: Fake or fabricated news articles
+
+<AppSolution href={appData.url}>
+  
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
