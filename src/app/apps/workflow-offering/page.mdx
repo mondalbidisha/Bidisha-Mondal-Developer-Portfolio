@@ -64,7 +64,7 @@ export const technologies = [
     image: '/logos/jest-logo-1.png' 
   },
   {
-    name: 'Git',
+    name: 'Git Cli',
     image: '/logos/git-logo.png',
   },
   {
@@ -147,7 +147,7 @@ export const technologies = [
 <FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
   {technologies.map((tech) => (
     <FadeIn key={tech.name}>
-      <div className="mt-auto">
+      <div className="mt-auto text-center">
         <Image
           src={tech.image}
           className="object-contain rounded-md m-auto"

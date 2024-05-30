@@ -149,7 +149,7 @@ const skillsLogos = {
   ],
   ['Tools' as string]: [
     {
-      name: 'Git',
+      name: 'Git Cli',
       image: '/logos/git-logo.png',
     },
     {
@@ -257,7 +257,7 @@ export default function Skills() {
 
           return (
             <FadeIn key={skill.name} className="h-[115px] w-24 place-self-center flex flex-col">
-              <div className="mt-auto">
+              <div className="mt-auto text-center">
                 <Image
                   src={skill.image}
                   className="object-contain rounded-md m-auto"

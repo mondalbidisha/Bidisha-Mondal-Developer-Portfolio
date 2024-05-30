@@ -40,6 +40,10 @@ export const technologies = [
     image: '/logos/js-logo.png',
   },
   {
+    name: 'GatsbyJS',
+    image: '/logos/gatsby-logo.jpeg',
+  },
+  {
     name: 'TypeScript',
     image: '/logos/ts-logo.png',
   },
@@ -52,7 +56,11 @@ export const technologies = [
     image: '/logos/mongodb-logo.webp',
   },
   {
-    name: 'Git',
+    name: 'Firebase',
+    image: '/logos/firebase-logo.jpg',
+  },
+  {
+    name: 'Git Cli',
     image: '/logos/git-logo.png',
   },
   {
@@ -69,19 +77,12 @@ export const technologies = [
 
     ## Overview
 
-    Message And Mingle is a contemporary chat application developed with cutting-edge technologies such as Next.js, TypeScript, Tailwind CSS, MongoDB, and Prisma. It offers real-time chat, group creation, profile customization, image uploads, and multiple login authentication methods, including email and social media SSO login via GitHub and Google.
-    
-    Message And Mingle is a personal project and the source code for the same can be found on GitHub. Live demo vidoes included in the README.
-    
-    Features included as part of the MVP release are as follows -
+    As web developers, we've been through a lot of tech interviews and they can be frustrating - especially when those interviews don't even have someone else on the other side! 
+    We've all paid our dues with Hackerrank and Leetcode but with little feedback and no practice alternatives, there was never a safe space to prepare for those recorded interviews.
+    Whether you're a an applicant or an interviewer - interviews suck. Powered by AI, TalentTap offers users everything they might need to make their next interview a more positive experience. 
 
-   1. Instant Messaging - Engage in real-time conversations with other users.
-   2. Group Chat Creation - Form chat groups to include multiple participants.
-   3. Personalized Profiles - Customize your name and profile picture.
-   4. User Activity Status - View live online/offline status of users.
-   5. Photo Sharing - Upload and share images in chats via Cloudinary.
-   6. Diverse Authentication - Options: Register or log in using email, GitHub, Google, and Twitter.
-
+    TalentTap is a personal project and the source code for the same can be found on GitHub. Live demo vidoes included in the README.
+    
   </Section>
 
 <Border className="my-8" />
@@ -90,20 +91,49 @@ export const technologies = [
 
 ## Implementation
 
-  Message And Mingle is a server-side rendered full stack web application that utilises the following technology stack to support a plethora of exciting features -
+<ul>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Interview Preparation Tool -</strong> 
+      While there are many excellent tools to help you prepare for coding interviews, getting a new job involves more than just coding.
+      There aren't many tools specifically designed for the non-coding aspects of the interview process. 
+      TalentTap addresses this gap by utilizing Symbl's conversation intelligence AI in this video application. 
+      This goes beyond basic speech-to-text, providing real-time insights and extracting discussion topics, sentiment, and conversation analytics such as talk-to-listen ratios.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Interview Feedback Tool -</strong> 
+      TalentTap is designed to source questions either directly from the candidate or from our extensive question bank. 
+      It then computes performance ratings and offers quantitative and qualitative feedback on practice interviews. 
+      This approach helps candidates improve and be fully prepared for their actual interviews.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Interview Assessment Tool -</strong> 
+      TalentTap is an assessment tool that extends beyond practice sessions to live interview scenarios. 
+      TalentTap, uses Agora to provide real-time transcriptions, keyword and profanity detection, and analysis during live interviews. 
+      Companies face increasing pressure from regulators to provide objective feedback after being sued for not hiring candidates. 
+      Some companies opt not to provide feedback due to this pressure, while others lack the resources to offer it on request. 
+      TalentTap offers an alternative by leveraging real-time data analytics to provide impartial and objective feedback, enhancing the experience for both candidates and interviewers.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Technologies involved -</strong> 
+      TalentTap is built using the following technology stack -
 
-  1. Next.js: A popular React framework for building web applications.
-  2. TypeScript: A statically typed superset of JavaScript.
-  3. Tailwind CSS: A utility-first CSS framework for designing modern and responsive UIs.
-  4. Headless UI: A set of completely unstyled, fully accessible UI components for React.
-  5. React: A JavaScript library for building user interfaces.
-  6. Prisma: A modern database toolkit for TypeScript and Node.js.
-  7. MongoDB: A NoSQL database for storing chat data.
-  8. NextAuth: An authentication library for Next.js applications.
-  9. Zustand: A small, fast, and scalable state management library for React.
-  10. Pusher: A hosted service that makes it super-easy to add real-time data and functionality to web and mobile applications.
-  11. Cloudinary: A cloud service that offers a solution to a web application's entire image management pipeline.
-  
+      1. Symbl.ai - for sentiment analysis, topic extraction, conversation analytics, entity and intent recognition, and real-time insights APIs.
+      2. Agora - for video conferencing (WebRTC being the underlying technology)
+      3. ReactJS - as the de-facto JavaScript library for building user interfaces
+      4. GatsbyJS - as our blazing fast React framework for performance, scalability, security and accessibility
+      5. Gatsby Cloud - Functions to bring an entire backend to InterviewToast - without managing a backend
+      6. Firebase - to enable user accounts, SSO,
+      7. TailwindCSS - to leverage the benefits and speed of the utility first CSS framework.
+    </span>
+  </li>
+</ul>
 <AppSolution href={appData.url}>
   
 </AppSolution>
@@ -119,7 +149,7 @@ export const technologies = [
 <FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
   {technologies.map((tech) => (
     <FadeIn key={tech.name}>
-      <div className="mt-auto">
+      <div className="mt-auto text-center">
         <Image
           src={tech.image}
           className="object-contain rounded-md m-auto"

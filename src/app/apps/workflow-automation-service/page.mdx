@@ -7,7 +7,7 @@ export const appData = {
   title: 'Workflow Automation Service',
   description: 'WAS is the backend micro-service enabling workflows that allow small business owners to automate multiple tasks such as sending reminder emails for unpaid invoices, setting up automatic recurring bill payments sending out recurring statemets etc.',
   image: intuitWorkflows,
-  date: '2022 - 2023',
+  date: '2022',
   service: 'Backend Microservice',
   url: 'https://qbo.intuit.com/redir/testdrive_us_advanced',
   pathname: '/apps/workflow-automation-service',
@@ -80,7 +80,7 @@ export const technologies = [
     image: '/logos/camunda-logo.png',
   },
   {
-    name: 'Git',
+    name: 'Git Cli',
     image: '/logos/git-logo.png',
   },
   {
@@ -170,7 +170,7 @@ Few of my notable contributions to WAS are discussed here in detail -
 <FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
   {technologies.map((tech) => (
     <FadeIn key={tech.name}>
-      <div className="mt-auto">
+      <div className="mt-auto text-center">
         <Image
           src={tech.image}
           className="object-contain rounded-md m-auto"

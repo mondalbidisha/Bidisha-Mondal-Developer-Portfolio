@@ -1,7 +1,7 @@
 import { ActivityBar, BottomBar, TabsContainer, TopBar } from '@/components';
 import NavigationChange from '@/components/NavigationChange';
 import TogglePortfolio from '@/components/TogglePortfolio';
-import { loadApps, loadLeetcode } from '@/lib/mdx';
+import { loadApps } from '@/lib/mdx';
 import { Providers } from '@/lib/providers';
 import { type Section } from '@/lib/redux/slices/sectionSlice/sectionSlice';
 import { Analytics } from '@vercel/analytics/react';
@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const allSections = Object.fromEntries([...mdxSectionEntries, ...tsxSectionEntries]);
 
   const allApps = await loadApps();
-  const allLeetcode = await loadLeetcode();
+  // const allLeetcode = await loadLeetcode();
 
   return (
     <Providers>
@@ -37,14 +37,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Toaster />
           <TopBar />
           <main className="flex-1 flex overflow-hidden relative">
-            <ActivityBar sections={allSections} allApps={allApps} allLeetcode={allLeetcode} />
+            <ActivityBar sections={allSections} allApps={allApps}/>
             <div className="flex w-full flex-col overflow-hidden">
               <TabsContainer /> {children}
             </div>
           </main>
           <BottomBar />
           <TogglePortfolio />
-          <NavigationChange allPaths={[...allApps, ...allLeetcode]} />
+          <NavigationChange allPaths={[...allApps]} />
           <Analytics />
         </body>
       </html>

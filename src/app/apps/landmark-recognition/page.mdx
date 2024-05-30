@@ -1,0 +1,164 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { landmarkRecognition } from '../../../../public/projects'
+
+export const appData = {
+  industry: 'Computer Software',
+  title: 'Landmark Recognition',
+  description: 'Landmark Recognition is a solution for identifying and recognizing landmarks from images, addressing key challenges and leveraging both algorithmic and human expertise to achieve high accuracy and reliability.',
+  image: landmarkRecognition,
+  date: '2024',
+  service: 'Predictive Analysis',
+  url: 'https://github.com/mondalbidisha/landmark-recognition',
+  pathname: '/apps/landmark-recognition',
+  framework: 'react',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'Python',
+    image: '/logos/python-logo.png',
+  },
+  {
+    name: 'Numpy',
+    image: '/logos/numpy-logo.png',
+  },
+  {
+    name: 'Jupyter',
+    image: '/logos/jupyter-logo.png',
+  },
+  {
+    name: 'Pandas',
+    image: '/logos/pandas-logo.png',
+  },
+  {
+    name: 'Matplotlib',
+    image: '/logos/matplotlib-logo.png',
+  },
+  {
+    name: 'Scikit-Learn',
+    image: '/logos/scikit-learn-logo.png',
+  },
+  {
+    name: 'Git Cli',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+
+    ## Overview
+
+    Landmark Recognition is a personal project that offers a solution for identifying and recognizing landmarks from images, addressing key challenges and leveraging both algorithmic and human expertise to achieve high accuracy and reliability.
+    I utilised a training dataset from Kaggle. The training set was created by clustering photos based on their geolocation and visual similarity using an algorithm. Matches between training images were identified through local feature matching. 
+    
+    Note that a single landmark may have multiple clusters, typically representing different views or sections of the landmark. 
+    To avoid bias, no computer vision algorithms were used for generating ground truth. 
+    Instead, human annotators established ground truth correspondences between test images and landmarks.
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+
+## Implementation
+
+<AppSolution href={appData.url}>
+
+  I used a combination of the following techniques, to build a solution for identifying and recognizing landmarks from images, addressing key challenges and leveraging both algorithmic and human expertise to achieve high accuracy and reliability.
+  High level implementaion details are outlined as follows -
+
+  <ul role="list" className="mt-6 space-y-8">
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Clustering Photos by Geolocation and Visual Similarity -</strong> 
+      I clustered photos based on their geolocation and visual similarity using an algorithm. This clustering helped me organize the data and identify potential landmarks.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Local Feature Matching -</strong> 
+      I established matches between training images using local feature matching techniques. This step ensures that visually similar images are accurately grouped together, which is crucial for recognizing landmarks from different angles and perspectives.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Multiple Clusters per Landmark -</strong> 
+      I accounted for multiple clusters per landmark, typically corresponding to different views or parts of the landmark. This allows my system to recognize landmarks even when they are viewed from various angles or when only parts of the landmark are visible.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Human Annotation for Ground Truth -</strong> 
+      To avoid bias and ensure accuracy, I established ground truth correspondences between test images and landmarks using human annotators instead of relying solely on computer vision algorithms. This human-in-the-loop approach improves the reliability of the training data.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Comprehensive Dataset Preparation -</strong> 
+      By preparing a comprehensive dataset that includes diverse views and parts of landmarks, I tried to ensure that the recognition system can handle a wide range of scenarios, improving its robustness and accuracy.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Utilization of Advanced Algorithms -</strong> 
+      I leveraged advanced algorithms for clustering and feature matching, ensuring that the system is capable of high-precision landmark recognition.    
+    </span>
+  </li>
+</ul>
+
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto text-center">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
