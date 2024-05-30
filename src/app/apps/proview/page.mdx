@@ -1,0 +1,147 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { proviewClient } from '../../../../public/projects'
+
+export const appData = {
+  industry: 'Computer Software',
+  title: 'Proview',
+  description: 'Proview is a frontend application that provides remote proctoring solutions for candidates taking our assessments remotely. A proctoring solution designed to integrate seamlessly with third-party assessment platforms. Proview works in conjunction with an Admin application counterpart, where recorded assessment footage can be perused.',
+  image: proviewClient,
+  date: '2020',
+  service: 'Web Application',
+  url: 'https://pages.talview.com/proview/v5/',
+  pathname: '/apps/proview',
+  framework: 'BackboneJS',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'HTML5',
+    image: '/logos/html5-logo.png',
+  },
+  {
+    name: 'CSS3',
+    image: '/logos/css-logo.png',
+  },
+  {
+    name: 'JavaScript',
+    image: '/logos/js-logo.png',
+  },
+  {
+    name: 'BackboneJS',
+    image: '/logos/backbone-logo.png',
+  },
+  {
+    name: 'Git',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+  { 
+    name: 'Docker', 
+    image: '/logos/docker-logo.png' 
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+    ## Overview
+
+    Proview Client is a frontend application that provides remote proctoring solutions for candidates taking our assessments remotely. Proview is built using the Backbone.js framework. It is designed to integrate with third-party assessment platforms seamlessly. 
+    Proview Client utilises TensorFlow based face-detection library (face-api.js) to detect human faces and objects in the video stream and raise flags if malpractice is detected.
+    The assessment footage recorded through Proview Client can viewed on Proview Admin. 
+    
+    The Proview Admin application is a frontend application build using Ember.js and shows information collected during the candidate's proctored assessment. 
+    This application displays a playback view of the candidate's video recorded during the test and any events (classified as high, medium or low to denote severity of malpractice) triggered which helps Recruiters and Evaluators perform a fair judgement of the candidates credibility.
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+
+## Implementation
+
+<AppSolution href={appData.url}>
+<ul>
+<li>
+    <span>
+      <strong className="font-semibold text-blue-100">Proview Client -</strong> 
+      Proview Client offers remote proctoring solutions to enable candidates attend our assessments and interviews remotely. 
+      Inbuilt Face and Object detection mechanisms mitigate the chances of cheating and other forms of malpractice.
+
+      I incorporated necessary code modifications to implement the TensorFlow.js based face detection along with performance enhancements. 
+      My contributions are outlined as follows -
+
+      1. Integrate with AI-based face detection library to detect single, multiple, or no faces in the candidate's video stream during an assessment and raise warning flags which in turn helps calculate the severity of the malpractice and disqualify the candidate accordingly.
+      2. Performance optimization using web workers to prevent the CPU-intensive face-detection library from blocking the main UI thread and delivering an optimal user experience.
+      3. Improve application performance and state management during offline mode to prevent loss of data due to poor network connectivity issues.
+      4. Built the feature to record and upload the candidate's test environment video before they commence the test, to allow Recruiters/Evaluators to make a fair judgment of the candidate's performance and rule out possibilities of malpractice if any.
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Proview Admin -</strong> 
+      Proview Admin is frontend application used by Recruiters and Evaluators to peruse the assessment footage and verify the candidates credibility.
+      I was responsible for maintaining this application, introducing new features and deploying changes requests.
+      My contributions are include the following -
+
+      1. Integrate with a video playback library to display the candidates proctored test video.
+      2. Intergrate with a thumbnail library to display screenshots of the candidates desktop screen and camera footage taken at 10 second intervals during the test.
+      3. Intergrate with wavesurfer library to playback the candidate's audio recorded during the test.
+      4. Implement functionality to display all events triggered by candidate during assessment and point out the exact duration in the video footage when an event occurred for extra scrutiny, accompanied by the malpractice index for that session/assessment based on events triggered.
+    </span>
+  </li>
+</ul>
+
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

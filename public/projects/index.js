@@ -5,5 +5,6 @@ import intuitWorkflows from './intuit-workflows.png';
 import intuitQuickbooks from './intuit-qbo.png';
 import sierraEcomaderas from './sierra-ecomaderas.png';
 import proviewClient from './proview-client.png'
+import workflowOffering from './workflow-offering.png'
 
-export { impulseux, leenithBorges, leenithIos, intuitWorkflows, intuitQuickbooks, sierraEcomaderas, proviewClient };
+export { impulseux, leenithBorges, leenithIos, intuitWorkflows, intuitQuickbooks, sierraEcomaderas, proviewClient, workflowOffering };

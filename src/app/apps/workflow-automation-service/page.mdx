@@ -1,0 +1,193 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { intuitWorkflows } from '../../../../public/projects';
+
+export const appData = {
+  industry: 'Financial Software',
+  title: 'Workflow Automation Service',
+  description: 'WAS is the backend micro-service enabling workflows that allow small business owners to automate multiple tasks such as sending reminder emails for unpaid invoices, setting up automatic recurring bill payments sending out recurring statemets etc.',
+  image: intuitWorkflows,
+  date: '2022 - 2023',
+  service: 'Backend Microservice',
+  url: 'https://qbo.intuit.com/redir/testdrive_us_advanced',
+  pathname: '/apps/workflow-automation-service',
+  framework: 'Java Spring-Boot',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'Spring-Boot',
+    image: '/logos/spring-boot-logo-1.png',
+  },
+  {
+    name: 'PostgresSql',
+    image: '/logos/postgres-logo.png',
+  },
+  {
+    name: 'GraphQL',
+    image: '/logos/graphql-logo.png',
+  },
+  { 
+    name: 'Kubernetes', 
+    image: '/logos/kubernetes-logo.png' 
+  },
+  { 
+    name: 'Jenkins', 
+    image: '/logos/jenkins-logo.png' 
+  },
+  { 
+    name: 'ELK Stack', 
+    image: '/logos/elk-stack-logo.png' 
+  },
+  { 
+    name: 'Kafka', 
+    image: '/logos/kafka-logo.png' 
+  },
+  {
+    name: 'Karate',
+    image: '/logos/karate-logo.png',
+  },
+  {
+    name: 'Mockito',
+    image: '/logos/mockito-logo.png',
+  },
+  {
+    name: 'JUnit',
+    image: '/logos/junit5-logo-1.png',
+  },
+  {
+    name: 'AWS-S3',
+    image: '/logos/s3-logo.png',
+  },
+  {
+    name: 'Splunk',
+    image: '/logos/splunk-logo.jpeg',
+  },
+  {
+    name: 'Camunda',
+    image: '/logos/camunda-logo.png',
+  },
+  {
+    name: 'Git',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+  { 
+    name: 'Docker', 
+    image: '/logos/docker-logo.png' 
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+    ## Overview
+
+    WAS is Intuit's backend micro-service that powers the creating and execution of workflows. 
+    Some necessary enhancements required to extend our existing architecture to support various generic use-cases are as follows -
+
+    1. Support for Purchase Order Approval workflows.
+    2. Support for multiple conditions in workflows and backward compatible CRUD operations.
+    3. DMN compiler to ensure that user-provided condition sets are logically correct.
+    4. Migration of legacy workflows to updated schema and archival of deleted workflows. 
+    
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+## Implementation
+
+<AppSolution href={appData.url}>
+
+WAS is a microservice that communicates with 2 other backend services namely QBO Monolith and AppConnect, each hosted on their respective server and all communications occur via API's.
+QBO monolith is the core backend service that powers Intuit Quickbooks. It exposes CRUD operations to create transactions like Invoices, Bills, Purchase Orders etc.
+User's can create workflow automations specifically for each transaction type. 
+
+AppConnect was responsible for polling OBO periodically to fetch the latest transaction details. This data was consumed by WAS while triggering workflows.
+Camunda is a third-party orchestration service that was responsible for activities like sending out emails reminders/notifications as part of workflow execution.
+
+Few of my notable contributions to WAS are discussed here in detail -
+
+<ul role="list" className="mt-6 space-y-8">
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Purchase Order Approval Workflows -</strong> 
+      QBO and WAS offered users the ability to create approval workflows for Invoices and Bills initially. We had to extend this use-case for Purchase Order's as well.
+      I single-handedly incorporated necessary changes to implement Purchase Order Approval workflows, that involved the following -
+
+      1. Schema changes to expose approval specific attributes in the Purchase Order transcation object.
+      2. Trigger API changes to support PurchaseOrder as a key.
+      3. AppConnect poller modifications to poll the new v3 endpoint for the latest transaction data.
+      4. Email template changes to support tags specific to the Purchase Order transaction.
+      5. Adding new rules to our Drools engine based on which workflow would be triggered from QBO, post the creation/updation/deletion of a Purchase Order. 
+    </span>
+  </li>
+  <li>
+    <span>
+      <strong className="font-semibold text-blue-100">Support for multiple conditions in Workflows -</strong> 
+      WAS traditionally supported only a single condition in workflows. The workflow was triggered only if this condition was true. Based on consumer feedback, we decided to introduce multiple condition support in WAS.
+      This was a breaking change and required extensive design considerations and code modifications to ensure backward compatibility. I worked with 2 engineers on the POC (proof of concept) and final implementaion.
+      My contributions are outlined as follows -
+
+      1. Schema changes to support multiple conditions in the worklows CRUD payload.
+      2. Extensive backward compatible code modifications to support workflow Read operation
+      3. Extensive backward compatible code modifications to support workflow Write operation
+      4. Database changes to store multiple condition sets, addition column indexes and a new tables
+      5. Evaluate API enhancements to effectively compute and verify if a workflow should be triggered or not
+      6. Developed a batch job for migration of legacy workflows to updated schema. 
+    </span>
+  </li>
+</ul>
+
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>
