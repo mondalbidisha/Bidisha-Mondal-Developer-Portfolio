@@ -64,6 +64,13 @@ const projects: Project[] = [
     description: ' using machine learning.',
     image: { src: fakeNewsDetection },
   },
+  // {
+  //   href: '/apps/fake-news-detection',
+  //   name: 'Fake News Detection',
+  //   full: false,
+  //   description: ' using machine learning.',
+  //   image: { src: fakeNewsDetection },
+  // },
 ];
 
 export default function MyWork() {

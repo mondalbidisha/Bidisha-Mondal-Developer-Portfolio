@@ -70,6 +70,10 @@ import UntoggledSidebar from './untoggled-sidebar';
 import VSCode from './vscode';
 import Warning from './warning';
 import WorkExperience from './work-experience';
+import Jupyter from './jupyter';
+import Gatsby from './gatsby';
+import Spring from './Spring';
+import Javascript from './Javascript';
 
 export {
   AboutMe,
@@ -144,4 +148,8 @@ export {
   VSCode,
   Warning,
   WorkExperience,
+  Jupyter,
+  Gatsby,
+  Spring,
+  Javascript
 };
