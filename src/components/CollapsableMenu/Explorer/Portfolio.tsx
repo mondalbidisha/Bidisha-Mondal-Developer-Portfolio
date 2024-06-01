@@ -13,9 +13,6 @@ import {
   Eslint,
   FavIcon,
   Git,
-  Leetcode,
-  Lib,
-  LibOpen,
   LogIcon,
   NewFile,
   NewFolder,
@@ -31,17 +28,19 @@ import {
   SolutionIcon,
   Src,
   SrcOpen,
-  Svelte,
   TailwindCSS,
   Technologies,
   TechnologiesIcon,
   TopLeftArrow,
   TopRigthArrow,
   TsConfig,
-  Tsx,
   WorkExperience,
+  Jupyter,
+  Gatsby,
+  Spring,
+  Javascript,
 } from '@/icons';
-import { App as AppType, Leetcode as LeetcodeType, MDXEntry } from '@/lib/mdx';
+import { App as AppType, MDXEntry } from '@/lib/mdx';
 import { Section, SubMenu, selectExpanded, selectPortfolio, selectSectionIsVisible, selectSectionOrder, selectSections, useSelector } from '@/lib/redux';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -62,10 +61,11 @@ const staticFiles = [
 
 const fileType = {
   ['react' as string]: <ReactIcon />,
-  ['typescript' as string]: <Tsx />,
+  ['spring' as string]: <Spring />,
   ['next' as string]: <NextConfig />,
-  ['svelte' as string]: <Svelte />,
-  ['leetcode' as string]: <Leetcode />,
+  ['gatsby' as string]: <Gatsby />,
+  ['jupyter' as string]: <Jupyter />,
+  ['javascript' as string]: <Javascript />,
 };
 
 const subSectionsIcons: { [key: string]: JSX.Element } = {

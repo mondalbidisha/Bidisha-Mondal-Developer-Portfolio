@@ -11,8 +11,8 @@ export const sections = [
   { index: 1, title: 'Work Experience', id: 'work-experience' },
   { index: 2, title: 'Skills', id: 'skills' },
   { index: 3, title: 'Project Work', id: 'my-work' },
-  { index: 4, title: 'Patents', id: 'patents' },
-  { index: 5, title: 'Contact Me', id: 'contact' },
+  // { index: 4, title: 'Patents', id: 'patents' },
+  // { index: 4, title: 'Contact Me', id: 'contact' },
 ];
 
 interface contentSection {
@@ -81,42 +81,42 @@ const content: contentSection[] = [
     },
     mainContent: <MyWork />,
   },
-  {
-    id: sections[4].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <Envelope height="28" width="28" />
-          <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'Patents',
-      description: (
-        <div>
-          I pioneered <span className="text-blue-400"> 2 patents</span> at <span className="text-blue-400"> Intuit Inc. </span>
-        </div>
-      ),
-    },
-    mainContent: <ContactForm />,
-  },
-  {
-    id: sections[5].id,
-    sectionHeader: {
-      icon: (
-        <>
-          <Envelope height="28" width="28" />
-          <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
-        </>
-      ),
-      title: 'Contact Me',
-      description: (
-        <div>
-          Let&apos;s get in <span className="text-blue-400">touch</span> and create <span className="text-blue-400">innovative software together!</span>
-        </div>
-      ),
-    },
-    mainContent: <ContactForm />,
-  },
+  // {
+  //   id: sections[4].id,
+  //   sectionHeader: {
+  //     icon: (
+  //       <>
+  //         <Envelope height="28" width="28" />
+  //         <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
+  //       </>
+  //     ),
+  //     title: 'Patents',
+  //     description: (
+  //       <div>
+  //         I pioneered <span className="text-blue-400"> 2 patents</span> at <span className="text-blue-400"> Intuit Inc. </span>
+  //       </div>
+  //     ),
+  //   },
+  //   mainContent: <ContactForm />,
+  // },
+  // {
+  //   id: sections[4].id,
+  //   sectionHeader: {
+  //     icon: (
+  //       <>
+  //         <Envelope height="28" width="28" />
+  //         <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
+  //       </>
+  //     ),
+  //     title: 'Contact Me',
+  //     description: (
+  //       <div>
+  //         Let&apos;s get in <span className="text-blue-400">touch</span> and create <span className="text-blue-400">innovative software together!</span>
+  //       </div>
+  //     ),
+  //   },
+  //   mainContent: <ContactForm />,
+  // },
 ];
 
 export default function Index() {
