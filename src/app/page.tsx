@@ -138,7 +138,7 @@ export default function Index() {
                 </span>{' '}
                 / &#8205; <AnimatedTitle />
               </div>
-              <p className="max-w-3xl">A software engineer with a B.S. in Computer Science and Technology with experience in Front-End and Back-End technologies.</p>
+              <p className="max-w-3xl">A dynamic Software Engineer with a passion for leveraging cutting-edge technology to solve real-world problems. With a robust background in Computer Science, holding a Bachelor of Technology (B-Tech) degree in Computer Science and Engineering and currently pursuing a Master of Science (M.S) degree at Syracuse University, I brings both academic excellence and practical experience to the table.</p>
             </FadeIn>
 
             <Socials />

@@ -25,7 +25,7 @@ export default function AboutMe() {
           <div className="max-w-xl flex-auto">
             <h3 className="text-3xl mb-5 font-semibold leading-8 tracking-tight text-white">Bidisha Mondal</h3>
             <p className="text-lg leading-7 text-about_me_green">Full-Stack Developer and AI/ML Enthusiast</p>
-            <p className="mt-4 text-base text-gray-500">I am a seasoned software professional with five years of industry experience, currently pursuing a Master's degree in Computer Science at Syracuse University. My expertise lies in developing scalable, robust, and intuitive web applications as well as software infrastructure that solve complex real-world problems and enhance user experience.</p>
+            <p className="mt-4 text-base text-gray-500">I am a seasoned software professional with five years of industry experience, currently pursuing a Master&apos;s degree in Computer Science at Syracuse University. My expertise lies in developing scalable, robust, and intuitive web applications as well as software infrastructure that solve complex real-world problems and enhance user experience.</p>
             <p className="mt-4 text-base text-gray-500">My collaborative spirit, innovative mindset, and proven problem-solving abilities ensure that I deliver impactful software solutions within critical timelines.</p>
             <p className="mt-4 text-base text-gray-500"> I am enthusiastic about leveraging my skills and experiences to contribute to forward-thinking projects and drive technological excellence.</p>
           </div>
