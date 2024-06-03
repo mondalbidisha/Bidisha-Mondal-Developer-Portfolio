@@ -131,7 +131,7 @@ export default function Index() {
               <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl">
                 Bidisha Mondal  <span className="wave">👋</span>
               </h1>
-              <div className="flex mt-3 mb-1">
+              <div className="flex mt-3 mb-3 text-xl">
                 Open to work {' '}
                 <span className="relative flex h-2 w-2 self-center mx-1">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>

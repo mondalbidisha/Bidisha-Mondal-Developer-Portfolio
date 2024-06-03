@@ -25,6 +25,7 @@ import TabsContainer from './TabsContainer';
 import ToolTip from './ToolTip';
 import TopBar from './TopBar';
 import WorkExperience from './WorkExperience';
+import Patent from './Patents'
 
 export {
   AboutMe,
@@ -56,4 +57,5 @@ export {
   ToolTip,
   TopBar,
   WorkExperience,
+  Patent,
 };
