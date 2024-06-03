@@ -1,5 +1,6 @@
 import { AboutMe, AnimatedTitle, Border, ContactForm, Container, FadeIn, GridPattern, MyWork, Section, SectionHeader, Skills, Socials, Stars, WorkExperience } from '@/components';
-import { Archive, BookOpen, BriefCase, Envelope } from '@/icons';
+import Patents from '@/components/Patents';
+import { Archive, BookOpen, BriefCase, Patent, Envelope } from '@/icons';
 
 export const metadata = {
   title: 'Bidisha Mondal',
@@ -11,7 +12,7 @@ export const sections = [
   { index: 1, title: 'Work Experience', id: 'work-experience' },
   { index: 2, title: 'Skills', id: 'skills' },
   { index: 3, title: 'Project Work', id: 'my-work' },
-  // { index: 4, title: 'Patents', id: 'patents' },
+  { index: 4, title: 'Patents', id: 'patents' },
   // { index: 4, title: 'Contact Me', id: 'contact' },
 ];
 
@@ -56,8 +57,8 @@ const content: contentSection[] = [
       title: 'Skills',
       description: (
         <div>
-          <span className="text-skills_purple">Full Stack</span> software developer with experience in <span className="text-skills_purple">Front-End</span> and{' '}
-          <span className="text-skills_purple">Back-End</span> technologies
+          <span className="text-skills_purple">Full-Stack</span> developer with experience in <span className="text-skills_purple">Web </span> and{' '}
+          <span className="text-skills_purple">AI/ML</span> technologies
         </div>
       ),
     },
@@ -75,30 +76,30 @@ const content: contentSection[] = [
       title: 'Project Work',
       description: (
         <div>
-          My <span className="text-my_work_yellow">project experience</span> as a Full-Stack Developer
+          My <span className="text-my_work_yellow">work and personal</span> project experience
         </div>
       ),
     },
     mainContent: <MyWork />,
   },
-  // {
-  //   id: sections[4].id,
-  //   sectionHeader: {
-  //     icon: (
-  //       <>
-  //         <Envelope height="28" width="28" />
-  //         <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
-  //       </>
-  //     ),
-  //     title: 'Patents',
-  //     description: (
-  //       <div>
-  //         I pioneered <span className="text-blue-400"> 2 patents</span> at <span className="text-blue-400"> Intuit Inc. </span>
-  //       </div>
-  //     ),
-  //   },
-  //   mainContent: <ContactForm />,
-  // },
+  {
+    id: sections[4].id,
+    sectionHeader: {
+      icon: (
+        <>
+          <BookOpen height="28" width="28" />
+          <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
+        </>
+      ),
+      title: 'Patents',
+      description: (
+        <div>
+          I pioneered <span className="text-blue-400"> 2 patents</span> at <span className="text-blue-400"> Intuit Inc. </span>
+        </div>
+      ),
+    },
+    mainContent: <Patents />,
+  },
   // {
   //   id: sections[4].id,
   //   sectionHeader: {
@@ -128,10 +129,10 @@ export default function Index() {
           <div className="min-h-screen relative">
             <FadeIn className="max-w-5xl pt-40 md:pt-[20vh] 2xl:pt-[30vh]">
               <h1 className="font-display text-5xl font-medium tracking-tight [text-wrap:balance] sm:text-6xl">
-                Bidisha Mondal<span className="wave">👋</span>
+                Bidisha Mondal  <span className="wave">👋</span>
               </h1>
               <div className="flex mt-3 mb-1">
-                Open to work{' '}
+                Open to work {' '}
                 <span className="relative flex h-2 w-2 self-center mx-1">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>

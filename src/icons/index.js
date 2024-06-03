@@ -74,6 +74,7 @@ import Jupyter from './jupyter';
 import Gatsby from './gatsby';
 import Spring from './spring';
 import Javascript from './javascript';
+import Patent from './patent';
 
 export {
   AboutMe,
@@ -151,5 +152,6 @@ export {
   Jupyter,
   Gatsby,
   Spring,
-  Javascript
+  Javascript,
+  Patent
 };

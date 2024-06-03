@@ -2,6 +2,7 @@
 import { Button, FadeIn, FadeInStagger } from '@/components';
 import clsx from 'clsx';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function LinkedinIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -38,11 +39,11 @@ export default function Socials({ className }: { className?: string; invert?: bo
           </Link>
         </FadeIn>
       ))}
-      {/* <FadeIn>
-        <Button className="flex items-center gap-x-2" href="/#contact" variant="secondary" arrow="right">
-          Contact Me
-        </Button>
-      </FadeIn> */}
+      <FadeIn>
+        <Link target="_blank" href="https://drive.google.com/file/d/10Hfey8t4b7y4RTTbB1dB464Wn3_ljBo4/view?usp=sharing" download>
+          <Image className="object-fill" src="/resume-icon.png" alt="resume icon" width={25} height={25} />
+        </Link>
+      </FadeIn>
     </FadeInStagger>
   );
 }

@@ -39,6 +39,7 @@ import {
   Gatsby,
   Spring,
   Javascript,
+  Patent,
 } from '@/icons';
 import { App as AppType, MDXEntry } from '@/lib/mdx';
 import { Section, SubMenu, selectExpanded, selectPortfolio, selectSectionIsVisible, selectSectionOrder, selectSections, useSelector } from '@/lib/redux';
@@ -74,6 +75,7 @@ const subSectionsIcons: { [key: string]: JSX.Element } = {
   skills: <Technologies />,
   'my-work': <Projects />,
   contact: <ContactMe />,
+  patents: <Patent />,
   about: <LogIcon />,
   overview: <ChallengeIcon />,
   implementation: <SolutionIcon />,
