@@ -9,7 +9,7 @@ const skills = [
   { skill: 'Languages', buttonClassNames: 'rounded-tl-full', textClassNames: '-translate-x15' },
   { skill: 'Frontend', buttonClassNames: 'rounded-tr-full', textClassNames: 'translate-x1 translate-y-1' },
   { skill: 'Backend', buttonClassNames: 'rounded-bl-full', textClassNames: 'translate-x-5 -translate-y-3' },
-  { skill: 'Tools', buttonClassNames: 'rounded-br-full', textClassNames: 'translate-x-8 translate-y-15' },
+  { skill: 'AI/ML', buttonClassNames: 'rounded-br-full', textClassNames: 'translate-x-8 translate-y-15' },
 ];
 
 const skillsLogos = {
@@ -30,10 +30,10 @@ const skillsLogos = {
       name: 'Java',
       image: '/logos/java-logo-1.png',
     },
-    {
-      name: 'C++',
-      image: '/logos/cpp-logo.png',
-    },
+    // {
+    //   name: 'C++',
+    //   image: '/logos/cpp-logo.png',
+    // },
     { 
       name: 'SQL', 
       image: '/logos/sql-logo.jpeg' 
@@ -55,6 +55,10 @@ const skillsLogos = {
     {
       name: 'NextJS',
       image: '/logos/nextjs-logo.png',
+    },
+    {
+      name: 'Gatsby',
+      image: '/logos/gatsby-logo.jpeg',
     },
     { 
       name: 'EmberJS', 
@@ -104,6 +108,18 @@ const skillsLogos = {
       name: 'MaterialUI',
       image: '/logos/materialui-logo.png',
     },
+    {
+      name: 'WebRTC',
+      image: '/logos/webrtc-logo-1.svg',
+    },
+    {
+      name: 'EsLint',
+      image: '/logos/eslint-logo.png',
+    },
+    {
+      name: 'Sentry',
+      image: '/logos/getsentry-logo.jpeg',
+    },
   ],
   ['Backend' as string]: [
     {
@@ -146,32 +162,6 @@ const skillsLogos = {
       name: 'GraphQL',
       image: '/logos/graphql-logo.png',
     },
-  ],
-  ['Tools' as string]: [
-    {
-      name: 'Git Cli',
-      image: '/logos/git-logo.png',
-    },
-    {
-      name: 'Github',
-      image: '/logos/github-logo.webp',
-    },
-    { 
-      name: 'Docker', 
-      image: '/logos/docker-logo.png' 
-    },
-    { 
-      name: 'Kubernetes', 
-      image: '/logos/kubernetes-logo.png' 
-    },
-    { 
-      name: 'Jenkins', 
-      image: '/logos/jenkins-logo.png' 
-    },
-    { 
-      name: 'Linux', 
-      image: '/logos/linux-logo.png' 
-    },
     { 
       name: 'ELK Stack', 
       image: '/logos/elk-stack-logo.png' 
@@ -185,24 +175,12 @@ const skillsLogos = {
       image: '/logos/s3-logo.png',
     },
     {
-      name: 'EsLint',
-      image: '/logos/eslint-logo.png',
-    },
-    {
       name: 'SocketIO',
       image: '/logos/socketio-logo.webp',
     },
     {
-      name: 'WebRTC',
-      image: '/logos/webrtc-logo-1.svg',
-    },
-    {
       name: 'Terraform',
       image: '/logos/terraform-logo.svg',
-    },
-    {
-      name: 'Sentry',
-      image: '/logos/getsentry-logo.jpeg',
     },
     {
       name: 'Splunk',
@@ -212,6 +190,60 @@ const skillsLogos = {
       name: 'Camunda',
       image: '/logos/camunda-logo.png',
     },
+    { 
+      name: 'Docker', 
+      image: '/logos/docker-logo.png' 
+    },
+    { 
+      name: 'Kubernetes', 
+      image: '/logos/kubernetes-logo.png' 
+    },
+    { 
+      name: 'Linux', 
+      image: '/logos/linux-logo.png' 
+    },
+  ],
+  ['AI/ML' as string]: [
+    {
+      name: 'Numpy',
+      image: '/logos/numpy-logo.png',
+    },
+    {
+      name: 'Jupyter',
+      image: '/logos/jupyter-logo.png',
+    },
+    { 
+      name: 'PyTorch', 
+      image: '/logos/pytorch-logo.webp' 
+    },
+    {
+      name: 'Pandas',
+      image: '/logos/pandas-logo.png',
+    },
+    {
+      name: 'Matplotlib',
+      image: '/logos/matplotlib-logo.png',
+    },
+    {
+      name: 'Scikit-Learn',
+      image: '/logos/scikit-learn-logo.png',
+    },
+    { 
+      name: 'TensorFlow', 
+      image: '/logos/tensorflow-logo.png' 
+    },
+    { 
+      name: 'Keras', 
+      image: '/logos/keras-logo.png' 
+    },
+    { 
+      name: 'NLTK', 
+      image: '/logos/nltk-logo.png' 
+    },
+    { 
+      name: 'Seaborn', 
+      image: '/logos/seaborn-logo.png' 
+    },
   ],
 };
 
@@ -219,7 +251,7 @@ const skillsTitles = {
   ['Languages' as string]: 'Programming Languages',
   ['Frontend' as string]: 'Frontend',
   ['Backend' as string]: 'Backend',
-  ['Tools' as string]: 'Tools',
+  ['AI/ML' as string]: 'AI/ML',
 };
 
 export default function Skills() {
