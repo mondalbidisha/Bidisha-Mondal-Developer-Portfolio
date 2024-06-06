@@ -1,0 +1,143 @@
+import { AppSolution, Border, Button, Container, FadeIn, FadeInStagger, Section } from '@/components';
+import Image from 'next/image';
+import { eloquenceAI } from '../../../../public/projects'
+
+export const appData = {
+  industry: 'Computer Software',
+  title: 'EloquenceAI',
+  description: "An application that utilises Google's Gemini API's and offers an interface that allows users to rephrase written content and the ability to choose from carefully curated list of prompts.",
+  image: eloquenceAI,
+  date: '2024',
+  service: 'Generative AI',
+  url: 'https://eloquence-ai.vercel.app/',
+  pathname: '/apps/eloquence-ai',
+  framework: 'next',
+};
+
+export const sections = [
+  { index: 0, title: 'About', id: 'about' },
+  { index: 1, title: 'Overview', id: 'overview' },
+  { index: 2, title: 'Implementation', id: 'implementation' },
+  { index: 3, title: 'Technologies', id: 'technologies' },
+];
+
+export const metadata = {
+  title: `${appData.title}`,
+  description: appData.description,
+};
+
+export const technologies = [
+  {
+    name: 'HTML5',
+    image: '/logos/html5-logo.png',
+  },
+  {
+    name: 'CSS3',
+    image: '/logos/css-logo.png',
+  },
+  {
+    name: 'JavaScript',
+    image: '/logos/js-logo.png',
+  },
+  {
+    name: 'TypeScript',
+    image: '/logos/ts-logo.png',
+  },
+  {
+    name: 'NextJS',
+    image: '/logos/nextjs-logo.png',
+  },
+  {
+    name: 'Supabase',
+    image: '/logos/supabase-logo.jpeg',
+  },
+  {
+    name: 'Prisma',
+    image: '/logos/prisma-logo.png',
+  },
+  {
+    name: 'TailwindCSS',
+    image: '/logos/tailwindcss-logo.jpg',
+  },
+  {
+    name: 'Git Cli',
+    image: '/logos/git-logo.png',
+  },
+  {
+    name: 'Github',
+    image: '/logos/github-logo.webp',
+  },
+];
+
+<Container>
+
+<Border className="my-8" />
+
+  <Section id="overview">
+    ## Overview
+
+    EloquenceAI is an AI-powered writing assistance tool inspired by QuillBot AI, designed to help users generate high-quality content through curated prompts. 
+    This tool leverages artificial intelligence to facilitate the writing process, offering various functionalities to enhance text generation, editing, and refinement. 
+    The project is built with Next.js and employs technologies such as TypeScript, Tailwind CSS, and Prisma for a robust and efficient development experience​​.
+
+    EloquenceAI aims to provide a seamless experience by integrating Generative AI with an intuitive user interface to offer assistance with content writing requirements​.
+
+  </Section>
+
+<Border className="my-8" />
+
+<Section id="implementation">
+
+## Implementation
+
+The core of EloquenceAI is developed using Next.js, a popular React framework, which allows for server-side rendering and static site generation. 
+This ensures that the application is highly performant and scalable. 
+The project setup involves running a development server using commands like npm run dev, which facilitates local testing and iteration during the development phase. 
+The use of Next.js also allows for easy deployment on platforms like Vercel, providing a straightforward path to bring the application live​​.
+
+TypeScript is employed throughout the project to enhance code quality and maintainability. 
+By using TypeScript, the developers ensure that the codebase is robust, with early detection of potential errors through static typing. 
+This practice significantly improves the reliability of the code, making the development process more efficient and reducing the likelihood of runtime errors. 
+The inclusion of ESLint further aids in maintaining consistent code standards and style across the project​ (GitHub)​.
+
+Styling is handled using Tailwind CSS, a utility-first CSS framework that allows for rapid and flexible design implementations. 
+Tailwind CSS is configured through the tailwind.config.ts file, enabling customized design tokens and theme settings that ensure a cohesive visual appearance. 
+Additionally, the project uses Prisma for database interactions, providing a type-safe ORM layer that simplifies data management and integration with the application's backend services​.
+Google&apos;s Gemini API&apos;s were used for LLM Generative AI integration, essentially the brains behind this tool.
+
+<AppSolution href={appData.url}>
+  
+</AppSolution>
+
+</Section>
+
+<Border className="my-8" />
+
+<Section id="technologies">
+
+## Technologies
+
+<FadeInStagger className="flex gap-4 mt-6 flex-wrap" faster once>
+  {technologies.map((tech) => (
+    <FadeIn key={tech.name}>
+      <div className="mt-auto">
+        <Image
+          src={tech.image}
+          className="object-contain rounded-md m-auto"
+          alt=""
+          height={64}
+          width={64}
+          style={{
+            width: 64,
+            height: 64,
+          }}
+        />
+        <h4 className="text-sm font-semibold tracking-tight text-[#525df3] text-center bg-white rounded-full w-min px-2 m-2 mx-auto">{tech.name}</h4>
+      </div>
+    </FadeIn>
+  ))}
+</FadeInStagger>
+
+</Section>
+
+</Container>

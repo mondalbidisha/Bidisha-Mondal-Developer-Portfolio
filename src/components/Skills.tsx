@@ -30,10 +30,10 @@ const skillsLogos = {
       name: 'Java',
       image: '/logos/java-logo-1.png',
     },
-    // {
-    //   name: 'C++',
-    //   image: '/logos/cpp-logo.png',
-    // },
+    {
+      name: 'C++',
+      image: '/logos/cpp-logo.png',
+    },
     { 
       name: 'SQL', 
       image: '/logos/sql-logo.jpeg' 
