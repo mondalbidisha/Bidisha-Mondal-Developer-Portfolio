@@ -2,7 +2,7 @@
 import { ExpandArrowLink, GlowCard } from '@/components';
 import clsx from 'clsx';
 import Image, { StaticImageData } from 'next/image';
-import { landmarkRecognition, fakeNewsDetection, intuitQuickbooks, messageMingle, proviewClient, talentTap } from '../../public/projects/';
+import { eloquenceAI, landmarkRecognition, fakeNewsDetection, intuitQuickbooks, messageMingle, proviewClient, talentTap } from '../../public/projects/';
 
 interface Project {
   href: string;
@@ -17,9 +17,9 @@ interface Project {
 const projects: Project[] = [
   {
     href: '/apps/workflow-automation-service',
-    name: 'Workflow Automation Service (WAS)',
+    name: 'Workflow Automation Service',
     full: true,
-    description: " is a backend microservice that powers Intuit's workflow's user interface.",
+    description: " is a backend microservice that powers Intuit's workflow's UI.",
     image: { src: intuitQuickbooks },
   },
   {
@@ -33,8 +33,15 @@ const projects: Project[] = [
     href: '/apps/proview',
     name: 'Proview',
     full: true,
-    description: ' is a frontend application that provides remote proctoring solutions for candidates taking our assessments remotely.',
+    description: ' is a frontend application that provides remote proctoring solutions for online assessments.',
     image: { src: proviewClient },
+  },
+  {
+    href: '/apps/landmark-recognition',
+    name: 'Landmark Recognition',
+    full: false,
+    description: ' using image datasets.',
+    image: { src: landmarkRecognition },
   },
   {
     href: '/apps/message-and-mingle',
@@ -51,11 +58,11 @@ const projects: Project[] = [
     image: { src: talentTap },
   },
   {
-    href: '/apps/landmark-recognition',
-    name: 'Landmark Recognition',
+    href: '/apps/eloquence-ai',
+    name: 'EloquenceAI',
     full: false,
-    description: ' using image datasets.',
-    image: { src: landmarkRecognition },
+    description: " using LLM's and Generative-AI.",
+    image: { src: eloquenceAI },
   },
   {
     href: '/apps/fake-news-detection',
@@ -64,13 +71,6 @@ const projects: Project[] = [
     description: ' using machine learning.',
     image: { src: fakeNewsDetection },
   },
-  // {
-  //   href: '/apps/fake-news-detection',
-  //   name: 'Fake News Detection',
-  //   full: false,
-  //   description: ' using machine learning.',
-  //   image: { src: fakeNewsDetection },
-  // },
 ];
 
 export default function MyWork() {
@@ -95,7 +95,7 @@ export default function MyWork() {
               placeholder="blur"
               className={clsx(
                 'z-10 my-work-img-shadow absolute w-full',
-                project.full ? '@md:w-[80%] @xl:w-[70%] @2xl:w-[55%] @md:rounded-tl-md bottom-0 right-0' : 'bottom-0 @xl:right-0 @xl:w-[70%] @3xl:w-full'
+                project.full ? '@md:w-[80%] @xl:w-[70%] @2xl:w-[55%] @md:rounded-tl-md bottom-0 right-0' : 'h-[55%] right-0 bottom-0 @xl:right-0 @xl:w-[70%] @3xl:w-full'
               )}
               src={project.image.src}
               alt=""

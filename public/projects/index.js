@@ -7,5 +7,6 @@ import talentTap from './talent-tap.png'
 import talentTapIntro from './talent-tap-intro.png'
 import fakeNewsDetection from './fake-news-detection.jpeg'
 import landmarkRecognition from './landmark-recognition.jpeg'
+import eloquenceAI from './eloquence-ai.png'
 
-export { landmarkRecognition, fakeNewsDetection, intuitWorkflows, intuitQuickbooks, proviewClient, workflowOffering, messageMingle, talentTap, talentTapIntro };
+export { eloquenceAI, landmarkRecognition, fakeNewsDetection, intuitWorkflows, intuitQuickbooks, proviewClient, workflowOffering, messageMingle, talentTap, talentTapIntro };

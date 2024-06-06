@@ -29,7 +29,7 @@ export default function SectionHeader({ icon, className, title, description }: {
             hidden: { opacity: 0, x: -20 },
             visible: { opacity: 1, x: 0 },
           }}
-          className="mt-6 text-5xl"
+          className="mt-6 text-5xl @md:text-2xl @sm:text-xl"
         >
           {description}
         </FadeIn>
