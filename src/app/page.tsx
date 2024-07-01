@@ -1,6 +1,6 @@
-import { AboutMe, AnimatedTitle, Border, ContactForm, Container, FadeIn, GridPattern, MyWork, Section, SectionHeader, Skills, Socials, Stars, WorkExperience } from '@/components';
+import { AboutMe, AnimatedTitle, Border, Container, FadeIn, GridPattern, MyWork, Section, SectionHeader, Skills, Socials, Stars, WorkExperience } from '@/components';
 import Patents from '@/components/Patents';
-import { Archive, BookOpen, BriefCase, Patent, Envelope } from '@/icons';
+import { Archive, BookOpen, BriefCase } from '@/icons';
 
 export const metadata = {
   title: 'Bidisha Mondal',
@@ -13,7 +13,6 @@ export const sections = [
   { index: 2, title: 'Skills', id: 'skills' },
   { index: 3, title: 'Project Work', id: 'my-work' },
   { index: 4, title: 'Patents', id: 'patents' },
-  // { index: 4, title: 'Contact Me', id: 'contact' },
 ];
 
 interface contentSection {
@@ -100,24 +99,6 @@ const content: contentSection[] = [
     },
     mainContent: <Patents />,
   },
-  // {
-  //   id: sections[4].id,
-  //   sectionHeader: {
-  //     icon: (
-  //       <>
-  //         <Envelope height="28" width="28" />
-  //         <span className="bg-blue-400 icon-blur absolute inset-0 -z-10"></span>
-  //       </>
-  //     ),
-  //     title: 'Contact Me',
-  //     description: (
-  //       <div>
-  //         Let&apos;s get in <span className="text-blue-400">touch</span> and create <span className="text-blue-400">innovative software together!</span>
-  //       </div>
-  //     ),
-  //   },
-  //   mainContent: <ContactForm />,
-  // },
 ];
 
 export default function Index() {
