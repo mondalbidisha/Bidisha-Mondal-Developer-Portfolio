@@ -5,6 +5,7 @@ import { loadApps } from '@/lib/mdx';
 import { Providers } from '@/lib/providers';
 import { type Section } from '@/lib/redux/slices/sectionSlice/sectionSlice';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import glob from 'fast-glob';
 import type { Metadata } from 'next';
 import { Toaster } from 'react-hot-toast';
@@ -28,7 +29,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const allSections = Object.fromEntries([...mdxSectionEntries, ...tsxSectionEntries]);
 
   const allApps = await loadApps();
-  // const allLeetcode = await loadLeetcode();
 
   return (
     <Providers>
@@ -46,6 +46,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <TogglePortfolio />
           <NavigationChange allPaths={[...allApps]} />
           <Analytics />
+          <SpeedInsights />
         </body>
       </html>
     </Providers>
